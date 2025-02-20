@@ -155,13 +155,13 @@ function Home() {
       </button>
 
       {/* Image at the Bottom */}
-<div className="absolute bottom-0 left-1/2  -translate-x-1/2 z-50 transition-all  hover:bg-black hover:bg-opacity-60 flex justify-center items-center w-40 h-20 hover:w-screen">
+<button className="absolute bottom-0 left-1/2  -translate-x-1/2 z-50 transition-all  hover:bg-black hover:bg-opacity-60 flex justify-center items-center w-40 h-20 hover:w-screen">
   <img
     src={Arror}
     alt="Bottom Image"
     className="w-20 h-10 transition-all scale-90 hover:scale-100"
   />
-</div>
+</button>
 
 
 
