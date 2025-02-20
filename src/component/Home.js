@@ -21,9 +21,31 @@ function Home() {
 
   return (
     <div className="relative flex justify-center items-center h-screen bg-black">
+      {/* White Overlay Layer with Custom Size */}
+      <div
+        className="absolute flex flex-col justify-center items-center top-1/4 right-[-150px] w-[650px] h-[700px] bg-black bg-opacity-80 z-20 rounded-md"
+        style={{
+          transform: "translate(-50%, -50%)", // Center the overlay
+        }}
+      >
+        {/* We Are Text */}
+        <div className=" text-5xl  tracking-widest drop-shadow-lg z-30 mb-10 mt-12" style={{ color: "#ff4d00" }}>
+          We Are
+        </div>
+
+        {/* HELIOS Text with Custom "O" Color */}
+        <div className="text-white text-[75px] font-bold tracking-widest drop-shadow-lg z-30 mb-8">
+          H E L I <span style={{ color: "#ff4d00" }}>O</span> S
+        </div>
+
+        <div className=" text-5xl tracking-widest drop-shadow-lg z-30 " style={{ color: "#ff4d00" }}>
+          IT Solution
+        </div>
+      </div>
+
       {/* Left Arrow */}
       <button
-        className="absolute left-5 z-10 bg-black bg-opacity-60 p-4 rounded-md text-white text-3xl hover:bg-opacity-60 transition flex items-center justify-center w-20 h-80 opacity-0 hover:opacity-100"
+        className="absolute left-5 z-30 bg-black bg-opacity-60 p-4 rounded-md text-white text-3xl hover:bg-opacity-60 transition flex items-center justify-center w-20 h-80 opacity-0 hover:opacity-100"
         onClick={() => swiper && swiper.slidePrev()}
       >
         <FaChevronLeft />
@@ -59,7 +81,7 @@ function Home() {
               transition={{ duration: 1.2, delay: 0.5 }}
             >
               <h1 className="text-4xl font-bold">LATEST LAPTOPS</h1>
-              <p className="text-lg">
+              <p className="text-lg" >
                 Powerful Performance. Portable Perfection.
               </p>
             </motion.div>
@@ -115,13 +137,11 @@ function Home() {
 
       {/* Right Arrow */}
       <button
-        className="absolute right-5 z-10 bg-black bg-opacity-60 p-4 rounded-md text-white text-3xl hover:bg-opacity-60 transition flex items-center justify-center w-20 h-80 opacity-0 hover:opacity-100"
+        className="absolute right-5 z-30 bg-black bg-opacity-60 p-4 rounded-md text-white text-3xl hover:bg-opacity-60 transition flex items-center justify-center w-20 h-80 opacity-0 hover:opacity-100"
         onClick={() => swiper && swiper.slideNext()}
       >
         <FaChevronRight />
       </button>
-
-      
     </div>
   );
 }
