@@ -11,6 +11,7 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Side1 from "../assets/side1.jpg";
 import Side2 from "../assets/side2.jpg";
 import Side3 from "../assets/side3.jpg";
+import SocialLinks from "../component/SocialLinks";
 
 function Home() {
   const [swiper, setSwiper] = useState(null);
@@ -23,24 +24,27 @@ function Home() {
     <div className="relative flex justify-center items-center h-screen bg-black">
       {/* White Overlay Layer with Custom Size */}
       <div
-        className="absolute flex flex-col justify-center items-center top-1/4 right-[-150px] w-[650px] h-[700px] bg-black bg-opacity-80 z-20 rounded-md"
+        className="pt-10 absolute flex flex-col justify-center items-center top-1/4 right-[-150px] w-[650px] h-[600px] bg-black bg-opacity-80 z-20 rounded-md"
         style={{
           transform: "translate(-50%, -50%)", // Center the overlay
         }}
       >
         {/* We Are Text */}
-        <div className=" text-5xl  tracking-widest drop-shadow-lg z-30 mb-10 mt-12" style={{ color: "#ff4d00" }}>
+        <div className=" text-5xl  tracking-widest drop-shadow-lg z-30  mt-20" style={{ color: "#ff4d00" }}>
           We Are
         </div>
 
         {/* HELIOS Text with Custom "O" Color */}
-        <div className="text-white text-[75px] font-bold tracking-widest drop-shadow-lg z-30 mb-8">
+        <div className="text-white text-[75px] font-bold tracking-widest drop-shadow-lg z-30 mt-8 mb-5">
           H E L I <span style={{ color: "#ff4d00" }}>O</span> S
         </div>
 
         <div className=" text-5xl tracking-widest drop-shadow-lg z-30 " style={{ color: "#ff4d00" }}>
           IT Solution
-        </div>
+        </div><div className="pt-10">
+  <SocialLinks />
+</div>
+
       </div>
 
       {/* Left Arrow */}
