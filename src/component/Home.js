@@ -1,85 +1,127 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay, EffectFade } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { motion } from "framer-motion";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Side1 from "../assets/side1.jpg";
 import Side2 from "../assets/side2.jpg";
 import Side3 from "../assets/side3.jpg";
 
 function Home() {
+  const [swiper, setSwiper] = useState(null);
+
+  useEffect(() => {
+    AOS.init({ duration: 2000, delay: 200 });
+  }, []);
+
   return (
-    <div className="relative flex justify-center items-center  shadow-2xl h-screen">
-      <div className="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10  ">
-        <h1 className="text-[#FF4500] text-6xl  font-Poppins tracking-wide drop-shadow-lg">
-          We  Are 
-        </h1>
-      </div>
-      {/* "HELIOS" text */}
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10  ">
-        <h1 className="text-white text-9xl font-bold font-Poppins tracking-wide drop-shadow-lg">
-          H  E  L  I  O  S
-        </h1>
-      </div>
-      <div className="absolute top-3/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10  ">
-        <h1 className="text-[#FF4500] text-6xl  font-Poppins tracking-wide drop-shadow-lg">
-          IT Company
-        </h1>
-      </div>
+    <div className="relative flex justify-center items-center h-screen bg-black">
+      {/* Left Arrow */}
+      <button
+        className="absolute left-5 z-10 bg-black bg-opacity-60 p-4 rounded-md text-white text-3xl hover:bg-opacity-60 transition flex items-center justify-center w-20 h-80 opacity-0 hover:opacity-100"
+        onClick={() => swiper && swiper.slidePrev()}
+      >
+        <FaChevronLeft />
+      </button>
 
       {/* Swiper Carousel */}
-      <div className="w-full z-0">
-        <Swiper
-          modules={[Pagination, Autoplay, EffectFade]}
-          effect="fade"
-          fadeEffect={{ crossFade: true }}
-          speed={1500}
-          spaceBetween={30}
-          slidesPerView={1}
-          pagination={{ clickable: true }}
-          autoplay={{ delay: 3500, disableOnInteraction: false }}
-          loop
-          className=" overflow-hidden shadow-2xl"
-        >
-          <SwiperSlide>
-            <div className="relative">
-              <img
-                src={Side1}
-                alt="Slide 1"
-                className="w-full h-screen object-cover"
-              />
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-black bg-opacity-90"></div>
-            </div>
-          </SwiperSlide>
+      <Swiper
+        modules={[Pagination, Autoplay, EffectFade]}
+        effect="fade"
+        speed={1500}
+        slidesPerView={1}
+        pagination={{ clickable: true }}
+        autoplay={{ delay: 3500, disableOnInteraction: false }}
+        loop
+        className="w-full"
+        onSwiper={setSwiper} // Set swiper instance
+      >
+        <SwiperSlide>
+          <div className="relative overflow-hidden">
+            <motion.img
+              src={Side1}
+              alt="Slide 1"
+              className="w-full h-screen object-cover"
+              initial={{ opacity: 0, y: -100 }}
+              animate={{ opacity: 1, y: 1 }}
+              transition={{ duration: 1.5 }}
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-70"></div>
+            <motion.div
+              className="absolute top-1/3 left-10 text-white"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1.2, delay: 0.5 }}
+            >
+              <h1 className="text-4xl font-bold">LATEST LAPTOPS</h1>
+              <p className="text-lg">
+                Powerful Performance. Portable Perfection.
+              </p>
+            </motion.div>
+          </div>
+        </SwiperSlide>
 
-          <SwiperSlide>
-            <div className="relative">
-              <img
-                src={Side2}
-                alt="Slide 2"
-                className="w-full h-screen object-cover"
-              />
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-black bg-opacity-90"></div>
-            </div>
-          </SwiperSlide>
+        <SwiperSlide>
+          <div className="relative overflow-hidden">
+            <motion.img
+              src={Side2}
+              alt="Slide 2"
+              className="w-full h-screen object-cover"
+              initial={{ opacity: 0, y: 100 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.5 }}
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-70"></div>
+            <motion.div
+              className="absolute top-1/3 left-10 text-white"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.2, delay: 0.5 }}
+            >
+              <h1 className="text-4xl font-bold">GAMING LAPTOPS</h1>
+              <p className="text-lg">THE RIGHT GEAR FOR THE GAME</p>
+            </motion.div>
+          </div>
+        </SwiperSlide>
 
-          <SwiperSlide>
-            <div className="relative">
-              <img
-                src={Side3}
-                alt="Slide 3"
-                className="w-full h-screen object-cover"
-              />
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-black bg-opacity-90"></div>
-            </div>
-          </SwiperSlide>
-        </Swiper>
-      </div>
+        <SwiperSlide>
+          <div className="relative overflow-hidden">
+            <motion.img
+              src={Side3}
+              alt="Slide 3"
+              className="w-full h-screen object-cover"
+              initial={{ opacity: 0, x: 100 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1.5 }}
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-70"></div>
+            <motion.div
+              className="absolute top-1/3 left-10 text-white"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1.2, delay: 0.5 }}
+            >
+              <h1 className="text-4xl font-bold">ACCESSORIES</h1>
+              <p className="text-lg">WIDE RANGE OF COMPUTER ACCESSORIES</p>
+            </motion.div>
+          </div>
+        </SwiperSlide>
+      </Swiper>
+
+      {/* Right Arrow */}
+      <button
+        className="absolute right-5 z-10 bg-black bg-opacity-60 p-4 rounded-md text-white text-3xl hover:bg-opacity-60 transition flex items-center justify-center w-20 h-80 opacity-0 hover:opacity-100"
+        onClick={() => swiper && swiper.slideNext()}
+      >
+        <FaChevronRight />
+      </button>
+
+      
     </div>
   );
 }
