@@ -12,6 +12,7 @@ import Side1 from "../assets/side1.jpg";
 import Side2 from "../assets/side2.jpg";
 import Side3 from "../assets/side3.jpg";
 import SocialLinks from "../component/SocialLinks";
+import Arror from "../assets/down.png";
 
 function Home() {
   const [swiper, setSwiper] = useState(null);
@@ -30,7 +31,10 @@ function Home() {
         }}
       >
         {/* We Are Text */}
-        <div className=" text-5xl  tracking-widest drop-shadow-lg z-30  mt-20" style={{ color: "#ff4d00" }}>
+        <div
+          className=" text-5xl tracking-widest drop-shadow-lg z-30 mt-20"
+          style={{ color: "#ff4d00" }}
+        >
           We Are
         </div>
 
@@ -39,12 +43,15 @@ function Home() {
           H E L I <span style={{ color: "#ff4d00" }}>O</span> S
         </div>
 
-        <div className=" text-5xl tracking-widest drop-shadow-lg z-30 " style={{ color: "#ff4d00" }}>
+        <div
+          className="text-5xl tracking-widest drop-shadow-lg z-30"
+          style={{ color: "#ff4d00" }}
+        >
           IT Solution
-        </div><div className="pt-10">
-  <SocialLinks />
-</div>
-
+        </div>
+        <div className="pt-10">
+          <SocialLinks />
+        </div>
       </div>
 
       {/* Left Arrow */}
@@ -85,7 +92,7 @@ function Home() {
               transition={{ duration: 1.2, delay: 0.5 }}
             >
               <h1 className="text-4xl font-bold">LATEST LAPTOPS</h1>
-              <p className="text-lg" >
+              <p className="text-lg">
                 Powerful Performance. Portable Perfection.
               </p>
             </motion.div>
@@ -146,6 +153,18 @@ function Home() {
       >
         <FaChevronRight />
       </button>
+
+      {/* Image at the Bottom */}
+<div className="absolute bottom-0 left-1/2  -translate-x-1/2 z-50 transition-all  hover:bg-black hover:bg-opacity-60 flex justify-center items-center w-40 h-20 hover:w-screen">
+  <img
+    src={Arror}
+    alt="Bottom Image"
+    className="w-20 h-10 transition-all scale-90 hover:scale-100"
+  />
+</div>
+
+
+
     </div>
   );
 }
