@@ -25,26 +25,23 @@ function Home() {
     <div className="relative flex justify-center items-center h-screen bg-black">
       {/* White Overlay Layer with Custom Size */}
       <div
-        className="pt-10 absolute flex flex-col justify-center items-center top-1/4 right-[-150px] w-[650px] h-[600px] bg-black bg-opacity-80 z-20 rounded-md"
-        style={{
-          transform: "translate(-50%, -50%)", // Center the overlay
-        }}
+        className="pt-10 absolute flex flex-col justify-center items-center top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-[650px] h-auto bg-black bg-opacity-80 z-20 rounded-md md:left-1/2 md:w-[500px] lg:w-[650px]"
       >
         {/* We Are Text */}
         <div
-          className=" text-5xl tracking-widest drop-shadow-lg z-30 mt-20"
+          className="text-4xl tracking-widest drop-shadow-lg z-30 mt-10 md:text-5xl lg:text-5xl"
           style={{ color: "#ff4d00" }}
         >
           We Are
         </div>
 
         {/* HELIOS Text with Custom "O" Color */}
-        <div className="text-white text-[75px] font-bold tracking-widest drop-shadow-lg z-30 mt-8 mb-5">
+        <div className="text-white text-[50px] font-bold tracking-widest drop-shadow-lg z-30 mt-8 mb-5 md:text-[60px] lg:text-[75px]">
           H E L I <span style={{ color: "#ff4d00" }}>O</span> S
         </div>
 
         <div
-          className="text-5xl tracking-widest drop-shadow-lg z-30"
+          className="text-4xl tracking-widest drop-shadow-lg z-30 md:text-5xl lg:text-5xl"
           style={{ color: "#ff4d00" }}
         >
           IT Solution
@@ -56,7 +53,7 @@ function Home() {
 
       {/* Left Arrow */}
       <button
-        className="absolute left-5 z-30 bg-black bg-opacity-60 p-4 rounded-md text-white text-3xl hover:bg-opacity-60 transition flex items-center justify-center w-20 h-80 opacity-0 hover:opacity-100"
+        className="absolute left-5 z-30 bg-black bg-opacity-60 p-4 rounded-md text-white text-3xl hover:bg-opacity-60 transition flex items-center justify-center w-16 h-64 opacity-0 hover:opacity-100 md:w-20 md:h-80 lg:w-20 lg:h-80"
         onClick={() => swiper && swiper.slidePrev()}
       >
         <FaChevronLeft />
@@ -86,14 +83,14 @@ function Home() {
             />
             <div className="absolute inset-0 bg-black bg-opacity-70"></div>
             <motion.div
-              className="absolute top-1/3 left-10 text-white"
+              className="absolute top-1/3 left-10 text-white md:left-5 lg:left-10"
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1.2, delay: 0.5 }}
             >
-              <h1 className="text-4xl font-bold">LATEST LAPTOPS</h1>
-              <p className="text-lg">
-                Powerful Performance. Portable Perfection.
+              <h1 className="text-3xl font-bold md:text-4xl lg:text-4xl">INNOVATIVE IT SOLUTIONS</h1>
+              <p className="text-base md:text-lg lg:text-lg">
+              Empowering Businesses with Next-Gen Technology.
               </p>
             </motion.div>
           </div>
@@ -111,13 +108,13 @@ function Home() {
             />
             <div className="absolute inset-0 bg-black bg-opacity-70"></div>
             <motion.div
-              className="absolute top-1/3 left-10 text-white"
+              className="absolute top-1/3 left-10 text-white md:left-5 lg:left-10"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2, delay: 0.5 }}
             >
-              <h1 className="text-4xl font-bold">GAMING LAPTOPS</h1>
-              <p className="text-lg">THE RIGHT GEAR FOR THE GAME</p>
+              <h1 className="text-3xl font-bold md:text-4xl lg:text-4xl">CUSTOM DEVELOPMENT</h1>
+              <p className="text-base md:text-lg lg:text-lg"> Scalable & Secure Digital Solutions Tailored for You.</p>
             </motion.div>
           </div>
         </SwiperSlide>
@@ -134,13 +131,13 @@ function Home() {
             />
             <div className="absolute inset-0 bg-black bg-opacity-70"></div>
             <motion.div
-              className="absolute top-1/3 left-10 text-white"
+              className="absolute top-1/3 left-10 text-white md:left-5 lg:left-10"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1.2, delay: 0.5 }}
             >
-              <h1 className="text-4xl font-bold">ACCESSORIES</h1>
-              <p className="text-lg">WIDE RANGE OF COMPUTER ACCESSORIES</p>
+              <h1 className="text-3xl font-bold md:text-4xl lg:text-4xl">CLOUD & CYBERSECURITY</h1>
+              <p className="text-base md:text-lg lg:text-lg"> Protecting Your Digital Assets with Advanced Security.</p>
             </motion.div>
           </div>
         </SwiperSlide>
@@ -148,23 +145,20 @@ function Home() {
 
       {/* Right Arrow */}
       <button
-        className="absolute right-5 z-30 bg-black bg-opacity-60 p-4 rounded-md text-white text-3xl hover:bg-opacity-60 transition flex items-center justify-center w-20 h-80 opacity-0 hover:opacity-100"
+        className="absolute right-5 z-30 bg-black bg-opacity-60 p-4 rounded-md text-white text-3xl hover:bg-opacity-60 transition flex items-center justify-center w-16 h-64 opacity-0 hover:opacity-100 md:w-20 md:h-80 lg:w-20 lg:h-80"
         onClick={() => swiper && swiper.slideNext()}
       >
         <FaChevronRight />
       </button>
 
       {/* Image at the Bottom */}
-<button className="absolute bottom-0 left-1/2  -translate-x-1/2 z-50 transition-all  hover:bg-black hover:bg-opacity-60 flex justify-center items-center w-40 h-20 hover:w-screen">
-  <img
-    src={Arror}
-    alt="Bottom Image"
-    className="w-20 h-10 transition-all scale-90 hover:scale-100"
-  />
-</button>
-
-
-
+      <button className="absolute bottom-0 left-1/2 -translate-x-1/2 z-50 transition-all hover:bg-black hover:bg-opacity-60 flex justify-center items-center w-40 h-20 hover:w-screen md:w-32 md:h-16 lg:w-40 lg:h-20">
+        <img
+          src={Arror}
+          alt="Bottom Image"
+          className="w-20 h-10 transition-all scale-90 hover:scale-100 md:w-16 md:h-8 lg:w-20 lg:h-10"
+        />
+      </button>
     </div>
   );
 }
