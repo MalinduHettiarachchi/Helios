@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 // Import your images (replace with your actual image paths)
 import PreviousIcon from "../assets/previous.png";
 import NextIcon from "../assets/next.png";
+import BackgroundImage from "../assets/backimg.jpg"; // Replace with your background image path
 
 function BackImage() {
   // Sample testimonials data
@@ -57,72 +58,77 @@ function BackImage() {
   useEffect(() => {
     const interval = setInterval(() => {
       handleNext(); // Automatically move to the next testimonial
-    }, 4000); // Change testimonial every 5 seconds
+    }, 4000); // Change testimonial every 4 seconds
 
     // Clear the interval when the component unmounts
     return () => clearInterval(interval);
   }, [currentTestimonial]); // Re-run effect when currentTestimonial changes
 
   return (
-    <div className="py-20 px-4 sm:px-6 lg:px-8 bg-black">
-      <div className="max-w-3xl mx-auto text-center">
-        {/* Topic */}
-        <div className="max-w-[350px] bg-[#232323] text-white mx-auto">
-          <h2 className="text-3xl font-bold mb-16 p-1 flex items-center justify-center">
-            CLIENT TESTIMONIALS
-          </h2>
-        </div>
-        {/* Comments */}
-        <div className="bg-[#232323] p-5 relative overflow-hidden h-40">
-          <div
-            className={`transition-all duration-500 ease-in-out ${
-              fade ? "opacity-100 translate-x-0" : "opacity-0"
-            } ${
-              slideDirection === "next"
-                ? fade
+    <div
+      className="min-h-64 bg-cover bg-center bg-fixed" // Fixed background
+      style={{ backgroundImage: `url(${BackgroundImage})` }} // Set background image
+    >
+      <div className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto text-center">
+          {/* Topic */}
+          <div className="max-w-[350px] bg-[#232323] text-white mx-auto">
+            <h2 className="text-3xl font-bold mb-16 p-1 flex items-center justify-center">
+              CLIENT TESTIMONIALS
+            </h2>
+          </div>
+          {/* Comments */}
+          <div className="bg-[#232323] p-5 relative overflow-hidden h-40">
+            <div
+              className={`transition-all duration-500 ease-in-out ${
+                fade ? "opacity-100 translate-x-0" : "opacity-0"
+              } ${
+                slideDirection === "next"
+                  ? fade
+                    ? "translate-x-0"
+                    : "-translate-x-full"
+                  : fade
                   ? "translate-x-0"
-                  : "-translate-x-full"
-                : fade
-                ? "translate-x-0"
-                : "translate-x-full"
-            }`}
-            key={currentTestimonial} // Force re-render for animation
-          >
-            <p className="text-lg text-white leading-relaxed mb-4">
-              {testimonials[currentTestimonial].text}
-            </p>
-            <div className="text-lg text-white">
-              <span className="font-bold">
-                {testimonials[currentTestimonial].author}
-              </span>
-              <span className="italic ml-2">
-                {testimonials[currentTestimonial].company}
-              </span>
+                  : "translate-x-full"
+              }`}
+              key={currentTestimonial} // Force re-render for animation
+            >
+              <p className="text-lg text-white leading-relaxed mb-4">
+                {testimonials[currentTestimonial].text}
+              </p>
+              <div className="text-lg text-white">
+                <span className="font-bold">
+                  {testimonials[currentTestimonial].author}
+                </span>
+                <span className="italic ml-2">
+                  {testimonials[currentTestimonial].company}
+                </span>
+              </div>
             </div>
           </div>
-        </div>
-        {/* Buttons */}
-        <div className="flex justify-center space-x-4 mt-6">
-          <button
-            onClick={handlePrevious}
-            className="bg-[#232323] px-2 rounded-lg hover:bg-[#333333] h-12"
-          >
-            <img
-              src={PreviousIcon}
-              alt="Previous"
-              className="w-3 h-7 scale-100 hover:scale-110"
-            />
-          </button>
-          <button
-            onClick={handleNext}
-            className="bg-[#232323] px-2 rounded-lg hover:bg-[#333333] h-12"
-          >
-            <img
-              src={NextIcon}
-              alt="Next"
-              className="w-3 h-7 scale-100 hover:scale-110"
-            />
-          </button>
+          {/* Buttons */}
+          <div className="flex justify-center space-x-4 mt-10">
+            <button
+              onClick={handlePrevious}
+              className="bg-[#232323] px-2 rounded-lg hover:bg-[#333333] h-12"
+            >
+              <img
+                src={PreviousIcon}
+                alt="Previous"
+                className="w-3 h-7 scale-100 hover:scale-110"
+              />
+            </button>
+            <button
+              onClick={handleNext}
+              className="bg-[#232323] px-2 rounded-lg hover:bg-[#333333] h-12"
+            >
+              <img
+                src={NextIcon}
+                alt="Next"
+                className="w-3 h-7 scale-100 hover:scale-110"
+              />
+            </button>
+          </div>
         </div>
       </div>
     </div>

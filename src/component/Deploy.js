@@ -7,7 +7,11 @@ import BackImage from './backimage'
 function Deploy() {
   return (
     <div>
+      <Home/>
+      <Navbar/>
+      <Aboutus />
       <BackImage />
+      <Aboutus/>
     </div>
   )
 }
