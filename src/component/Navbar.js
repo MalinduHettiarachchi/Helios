@@ -58,8 +58,8 @@ function Navbar() {
       {/* Navigation Links */}
       <ul
         className={`${
-          isMenuOpen ? "flex flex-col items-center" : "hidden"
-        } md:flex md:space-x-6 uppercase text-lg font-light absolute md:static bg-black md:bg-transparent w-full md:w-auto left-0 top-16 md:top-0 px-4 md:px-0 py-4 md:py-0 z-50`}
+          isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+        } transition-all duration-500 ease-in-out overflow-hidden md:max-h-none md:opacity-100 flex flex-col md:flex-row justify-center items-center md:justify-start md:space-x-6 uppercase text-lg font-light absolute md:static bg-black md:bg-transparent w-full md:w-auto left-0 top-16 md:top-0 px-4 md:px-0 py-4 md:py-0 z-50`}
       >
         <li className="hover:text-gray-400 cursor-pointer py-2 md:py-0">Home</li>
         <li className="hover:text-gray-400 cursor-pointer py-2 md:py-0">About Us</li>
