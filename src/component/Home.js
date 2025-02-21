@@ -53,7 +53,7 @@ function Home() {
 
       {/* Left Arrow */}
       <button
-        className="absolute left-5 z-30 bg-black bg-opacity-60 p-4 rounded-md text-white text-3xl hover:bg-opacity-60 transition flex items-center justify-center w-16 h-64 opacity-0 hover:opacity-100 md:w-20 md:h-80 lg:w-20 lg:h-80"
+        className="absolute left-0 z-30 bg-black bg-opacity-60 p-4 text-white text-3xl hover:bg-opacity-60 transition flex items-center justify-center w-16 h-64 opacity-0 hover:opacity-100 md:w-16 md:h-screen lg:w-16 lg:h-screen"
         onClick={() => swiper && swiper.slidePrev()}
       >
         <FaChevronLeft />
@@ -145,7 +145,7 @@ function Home() {
 
       {/* Right Arrow */}
       <button
-        className="absolute right-5 z-30 bg-black bg-opacity-60 p-4 rounded-md text-white text-3xl hover:bg-opacity-60 transition flex items-center justify-center w-16 h-64 opacity-0 hover:opacity-100 md:w-20 md:h-80 lg:w-20 lg:h-80"
+        className="absolute right-0 z-30 bg-black bg-opacity-60 p-4 text-white text-3xl hover:bg-opacity-60 transition flex items-center justify-center w-16 h-screen opacity-0 hover:opacity-100 md:w-16 md:h-screen lg:w-16 lg:h-screen"
         onClick={() => swiper && swiper.slideNext()}
       >
         <FaChevronRight />
