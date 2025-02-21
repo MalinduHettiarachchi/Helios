@@ -1,10 +1,10 @@
 import React from 'react'
-import Home from "../src/component/Home"
+import Deploy from './component/Deploy'
 
 function App() {
   return (
     <div>
-      <Home />
+      <Deploy />
     </div>
   )
 }
