@@ -4,12 +4,12 @@ function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
+    console.log("Menu toggled:", !isMenuOpen); // Debugging
     setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    
-    <nav className="bg-black text-white flex justify-between items-center px-4 md:px-10 py-4">
+    <nav className="bg-black text-white flex justify-between items-center px-4 md:px-10 py-4 relative">
       {/* Logo */}
       <div className="text-white text-3xl font-light tracking-wide">
         H E L I
@@ -40,7 +40,7 @@ function Navbar() {
       <ul
         className={`${
           isMenuOpen ? "block" : "hidden"
-        } md:flex md:space-x-6 uppercase text-lg font-light absolute md:static bg-black md:bg-transparent w-full md:w-auto left-0 top-16 md:top-0 px-4 md:px-0 py-4 md:py-0`}
+        } md:flex md:space-x-6 uppercase text-lg font-light absolute md:static bg-black md:bg-transparent w-full md:w-auto left-0 top-16 md:top-0 px-4 md:px-0 py-4 md:py-0 z-50`}
       >
         <li className="hover:text-gray-400 cursor-pointer py-2 md:py-0">Home</li>
         <li className="hover:text-gray-400 cursor-pointer py-2 md:py-0">About Us</li>
