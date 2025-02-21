@@ -25,7 +25,7 @@ function Home() {
     <div className="relative flex justify-center items-center h-screen bg-black">
       {/* White Overlay Layer with Custom Size */}
       <div
-        className="pt-10 absolute flex flex-col justify-center items-center top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-[650px] h-auto bg-black bg-opacity-80 z-20 rounded-md md:left-1/2 md:w-[500px] lg:w-[650px]"
+        className="pt-10 absolute flex flex-col justify-center items-center top-1/4 mt-20 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-[650px] h-auto bg-black bg-opacity-80 z-20 rounded-md md:left-1/2 md:w-[500px] lg:w-[650px]"
       >
         {/* We Are Text */}
         <div

@@ -8,6 +8,7 @@ function Navbar() {
   };
 
   return (
+    
     <nav className="bg-black text-white flex justify-between items-center px-4 md:px-10 py-4">
       {/* Logo */}
       <div className="text-white text-3xl font-light tracking-wide">
