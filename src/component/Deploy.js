@@ -11,7 +11,6 @@ function Deploy() {
       <Navbar/>
       <Aboutus />
       <BackImage />
-      <Aboutus/>
     </div>
   )
 }

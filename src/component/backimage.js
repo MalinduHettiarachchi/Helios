@@ -73,12 +73,12 @@ function BackImage() {
         <div className="max-w-3xl mx-auto text-center">
           {/* Topic */}
           <div className="max-w-[350px] bg-[#232323] text-white mx-auto">
-            <h2 className="text-3xl font-bold mb-16 p-1 flex items-center justify-center">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-16 p-1 flex items-center justify-center">
               CLIENT TESTIMONIALS
             </h2>
           </div>
           {/* Comments */}
-          <div className="bg-[#232323] p-5 relative overflow-hidden h-40">
+          <div className="bg-[#232323] p-5 relative overflow-hidden h-48 sm:h-40">
             <div
               className={`transition-all duration-500 ease-in-out ${
                 fade ? "opacity-100 translate-x-0" : "opacity-0"
@@ -93,10 +93,10 @@ function BackImage() {
               }`}
               key={currentTestimonial} // Force re-render for animation
             >
-              <p className="text-lg text-white leading-relaxed mb-4">
+              <p className="text-base sm:text-lg text-white leading-relaxed mb-4">
                 {testimonials[currentTestimonial].text}
               </p>
-              <div className="text-lg text-white">
+              <div className="text-base sm:text-lg text-white">
                 <span className="font-bold">
                   {testimonials[currentTestimonial].author}
                 </span>
@@ -107,25 +107,25 @@ function BackImage() {
             </div>
           </div>
           {/* Buttons */}
-          <div className="flex justify-center space-x-4 mt-10">
+          <div className="flex justify-center space-x-4 mt-8 sm:mt-10">
             <button
               onClick={handlePrevious}
-              className="bg-[#232323] px-2 rounded-lg hover:bg-[#333333] h-12"
+              className="bg-[#232323] px-2 rounded-lg hover:bg-[#333333] h-10 sm:h-12"
             >
               <img
                 src={PreviousIcon}
                 alt="Previous"
-                className="w-3 h-7 scale-100 hover:scale-110"
+                className="w-3 h-5 sm:h-7 scale-100 hover:scale-110"
               />
             </button>
             <button
               onClick={handleNext}
-              className="bg-[#232323] px-2 rounded-lg hover:bg-[#333333] h-12"
+              className="bg-[#232323] px-2 rounded-lg hover:bg-[#333333] h-10 sm:h-12"
             >
               <img
                 src={NextIcon}
                 alt="Next"
-                className="w-3 h-7 scale-100 hover:scale-110"
+                className="w-3 h-5 sm:h-7 scale-100 hover:scale-110"
               />
             </button>
           </div>
