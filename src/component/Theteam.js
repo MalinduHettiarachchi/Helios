@@ -30,10 +30,10 @@ function Theteam() {
   return (
     <div className="bg-[#1a1a1a]">
       {/* Top Section: Heading and Paragraph */}
-      <div className="p-16 overflow-x-hidden">
+      <div className="p-8 md:p-16 overflow-x-hidden">
         {/* Heading with Framer Motion */}
         <motion.h1
-          className="text-5xl font-bold mb-10 text-left ml-20"
+          className="text-3xl md:text-5xl font-bold mb-6 md:mb-10 text-left ml-4 md:ml-20"
           initial={{ x: -200, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 1, ease: "easeOut" }}
@@ -45,7 +45,7 @@ function Theteam() {
 
         {/* Paragraph with Framer Motion */}
         <motion.p
-          className="text-xl text-white text-left ml-20 mt-4"
+          className="text-base md:text-xl text-white text-left ml-4 md:ml-20 mt-4"
           initial={{ x: 200, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 1, ease: "easeOut" }}
@@ -71,8 +71,8 @@ function Theteam() {
       </div>
 
       {/* Team Members Section */}
-      <div className="bg-[#232323] p-16 w-full">
-        <div className="flex justify-center flex-wrap gap-20 max-w-[1200px] mx-auto">
+      <div className="bg-[#232323] p-8 md:p-16 w-full overflow-x-hidden">
+        <div className="flex flex-col md:flex-row justify-center flex-wrap gap-8 md:gap-20 max-w-[1200px] mx-auto">
           {/* Robert Doe */}
           <div className="flex flex-col">
             {/* Image and Text Overlay with Framer Motion */}
@@ -86,7 +86,7 @@ function Theteam() {
               <img
                 src={RobertDoeImage}
                 alt="Robert Doe"
-                className="w-96 h-auto object-cover"
+                className="w-full md:w-96 h-auto object-cover"
               />
               <div className="absolute bottom-0 left-0 text-white p-2 w-full">
                 <h2 className="text-right text-2xl text-black">CAROLINE</h2>
@@ -100,7 +100,7 @@ function Theteam() {
               transition={{ duration: 1, ease: "easeOut" }}
               viewport={{ once: false }}
             >
-              <p className="text-3xl text-white text-bold mt-10 text-left">
+              <p className="text-2xl md:text-3xl text-white text-bold mt-6 md:mt-10 text-left">
                 HEAD OF DEVELOPMENT
               </p>
               <ul className="text-white text-left mt-4 space-y-2">
@@ -185,7 +185,7 @@ function Theteam() {
                 <img
                   src={CarolineSmithImage}
                   alt="Caroline Smith"
-                  className="w-96 h-auto object-cover"
+                  className="w-full md:w-96 h-auto object-cover"
                 />
                 <div className="absolute bottom-0 left-0 text-white p-2 w-full">
                   <h2 className="text-left text-2xl text-black">ROBERT DOE</h2>
@@ -199,7 +199,7 @@ function Theteam() {
                 transition={{ duration: 1, ease: "easeOut" }}
                 viewport={{ once: false }}
               >
-                <p className="text-3xl text-white text-bold mt-10 text-left">
+                <p className="text-2xl md:text-3xl text-white text-bold mt-6 md:mt-10 text-left">
                   CLIENT SERVICE DIRECTOR
                 </p>
                 <ul className="text-white text-left mt-4 space-y-2">
@@ -274,10 +274,10 @@ function Theteam() {
       </div>
 
       {/* Team Skills Section */}
-      <div className="bg-[#1a1a1a] p-10 overflow-x-hidden" ref={ref}>
+      <div className="bg-[#1a1a1a] p-8 md:p-10 overflow-x-hidden" ref={ref}>
         <div className="max-w-[1200px] mx-auto">
           <motion.h1
-            className="text-5xl font-bold mb-8 text-[#ff4d00] ml-20"
+            className="text-3xl md:text-5xl font-bold mb-6 md:mb-8 text-[#ff4d00] ml-4 md:ml-20"
             initial={{ x: -200, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 1, ease: "easeOut" }}
@@ -287,7 +287,7 @@ function Theteam() {
             <h2 className="">TEAM SKILLS</h2>
           </motion.h1>
           <motion.h1
-            className="text-lg mb-12 text-white ml-20 mr-20"
+            className="text-base md:text-lg mb-8 md:mb-12 text-white ml-4 md:ml-20 mr-4 md:mr-20"
             initial={{ x: 200, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 1, ease: "easeOut" }}

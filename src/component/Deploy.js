@@ -4,6 +4,7 @@ import Navbar from './Navbar'
 import Aboutus from './Aboutus'
 import BackImage from './backimage'
 import Theteam from './Theteam'
+import Backimg2 from './Backimg2'
 
 function Deploy() {
   return (
@@ -13,6 +14,7 @@ function Deploy() {
       <Aboutus />
       <BackImage />
       <Theteam />
+      <Backimg2 />
     </div>
   )
 }
