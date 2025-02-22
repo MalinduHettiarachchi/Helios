@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion"; // Import Framer Motion
 
 // Import images for team members (replace with actual image paths)
 import RobertDoeImage from "../assets/person1.jpg";
@@ -12,14 +13,26 @@ function Theteam() {
     <div className="bg-[#1a1a1a]">
       {/* Top Section: Heading and Paragraph */}
       <div className="p-16 overflow-x-hidden">
-        {/* Heading */}
-        <h1 className="text-5xl font-bold mb-10 text-left ml-20">
+        {/* Heading with Framer Motion */}
+        <motion.h1
+          className="text-5xl font-bold mb-10 text-left ml-20"
+          initial={{ x: -200, opacity: 0 }} // Start from the left and invisible
+          whileInView={{ x: 0, opacity: 1 }} // Animate when in view
+          transition={{ duration: 1, ease: "easeOut" }} // Animation settings
+          viewport={{ once: false }} // Allow animation to trigger again on scroll up
+        >
           <span className="text-[#ff4d00] italic">WHO'S</span>
           <span className="italic font-light text-white"> BEHIND HELIOS?</span>
-        </h1>
+        </motion.h1>
 
-        {/* Paragraph */}
-        <p className="text-xl text-white text-left ml-20 mt-4">
+        {/* Paragraph with Framer Motion */}
+        <motion.p
+          className="text-xl text-white text-left ml-20 mt-4"
+          initial={{ x: 200, opacity: 0 }} // Start from the right and invisible
+          whileInView={{ x: 0, opacity: 1 }} // Animate when in view
+          transition={{ duration: 1, ease: "easeOut" }} // Animation settings
+          viewport={{ once: false }} // Allow animation to trigger again on scroll up
+        >
           WE DESIGN{" "}
           <span className="relative inline-block">
             WEBSITES
@@ -36,7 +49,7 @@ function Theteam() {
             <div className="absolute left-0 bottom-0 w-full h-[2px] bg-[#ff4d00]"></div>
           </span>{" "}
           AND OTHER AWESOME DIGITAL MEDIA
-        </p>
+        </motion.p>
       </div>
 
       {/* Team Members Section */}
@@ -44,7 +57,14 @@ function Theteam() {
         <div className="flex justify-center flex-wrap gap-20 max-w-[1200px] mx-auto">
           {/* Robert Doe */}
           <div className="flex flex-col">
-            <div className="relative">
+            {/* Image and Text Overlay with Framer Motion */}
+            <motion.div
+              className="relative"
+              initial={{ x: -200, opacity: 0 }} // Start from the left and invisible
+              whileInView={{ x: 0, opacity: 1 }} // Animate when in view
+              transition={{ duration: 1, ease: "easeOut" }} // Animation settings
+              viewport={{ once: false }} // Allow animation to trigger again on scroll up
+            >
               <img
                 src={RobertDoeImage}
                 alt="Robert Doe"
@@ -53,40 +73,67 @@ function Theteam() {
               <div className="absolute bottom-0 left-0 text-white p-2 w-full">
                 <h2 className="text-right text-2xl text-black">CAROLINE</h2>
               </div>
-            </div>
-            <p className="text-3xl text-white text-bold mt-10 text-left">HEAD OF DEVELOPMENT</p>
-            <ul className="text-white text-left mt-4 space-y-2">
-              <li className="flex items-center">
-                <span style={{ color: "#ff4d00", marginRight: "10px" }}>✓</span>
-                Brand Design
-              </li>
-              <li className="flex items-center">
-                <span style={{ color: "#ff4d00", marginRight: "10px" }}>✓</span>
-                Visual Identity
-              </li>
-              <li className="flex items-center">
-                <span style={{ color: "#ff4d00", marginRight: "10px" }}>✓</span>
-                Product Design
-              </li>
-              <li className="flex items-center">
-                <span style={{ color: "#ff4d00", marginRight: "10px" }}>✓</span>
-                Illustrations
-              </li>
-              <li className="flex items-center">
-                <span style={{ color: "#ff4d00", marginRight: "10px" }}>✓</span>
-                Brand Action
-              </li>
-            </ul>
+            </motion.div>
 
-            {/* Social Links */}
-            <div className="flex flex-wrap justify-left gap-4 md:gap-6 py-5 mt-6">
+            {/* Title and List with Framer Motion */}
+            <motion.div
+              initial={{ x: -200, opacity: 0 }} // Start from the left and invisible
+              whileInView={{ x: 0, opacity: 1 }} // Animate when in view
+              transition={{ duration: 1, ease: "easeOut" }} // Animation settings
+              viewport={{ once: false }} // Allow animation to trigger again on scroll up
+            >
+              <p className="text-3xl text-white text-bold mt-10 text-left">
+                HEAD OF DEVELOPMENT
+              </p>
+              <ul className="text-white text-left mt-4 space-y-2">
+                <li className="flex items-center">
+                  <span style={{ color: "#ff4d00", marginRight: "10px" }}>
+                    ✓
+                  </span>
+                  Brand Design
+                </li>
+                <li className="flex items-center">
+                  <span style={{ color: "#ff4d00", marginRight: "10px" }}>
+                    ✓
+                  </span>
+                  Visual Identity
+                </li>
+                <li className="flex items-center">
+                  <span style={{ color: "#ff4d00", marginRight: "10px" }}>
+                    ✓
+                  </span>
+                  Product Design
+                </li>
+                <li className="flex items-center">
+                  <span style={{ color: "#ff4d00", marginRight: "10px" }}>
+                    ✓
+                  </span>
+                  Illustrations
+                </li>
+                <li className="flex items-center">
+                  <span style={{ color: "#ff4d00", marginRight: "10px" }}>
+                    ✓
+                  </span>
+                  Brand Action
+                </li>
+              </ul>
+            </motion.div>
+
+            {/* Social Links with Framer Motion */}
+            <motion.div
+              className="flex flex-wrap justify-left gap-4 md:gap-6 py-5 mt-6"
+              initial={{ x: -200, opacity: 0 }} // Start from the left and invisible
+              whileInView={{ x: 0, opacity: 1 }} // Animate when in view
+              transition={{ duration: 1, ease: "easeOut" }} // Animation settings
+              viewport={{ once: false }} // Allow animation to trigger again on scroll up
+            >
               {socialMedia1.map((platform, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className="text-white relative text-xs md:text-sm uppercase tracking-wider group flex flex-col items-center"
                 >
                   {/* Top Line - Moves Down More on Hover with Reduced Opacity and Color Change */}
-                  <span 
+                  <span
                     className="w-12 md:w-20 border-t border-white mb-1 md:mb-2 transition-all duration-300 ease-in-out 
                       group-hover:w-16 md:group-hover:w-24 group-hover:rotate-45 group-hover:translate-y-2 md:group-hover:translate-y-4 
                       group-hover:border-gray-400 group-hover:opacity-50"
@@ -96,76 +143,113 @@ function Theteam() {
                   <span className="relative z-10 ">{platform}</span>
 
                   {/* Bottom Line - Moves Up More on Hover with Reduced Opacity and Color Change */}
-                  <span 
+                  <span
                     className="w-12 md:w-20 border-t border-white mt-1 md:mt-2 transition-all duration-300 ease-in-out 
                       group-hover:w-16 md:group-hover:w-24 group-hover:-rotate-45 group-hover:-translate-y-2 md:group-hover:-translate-y-4 
                       group-hover:border-gray-400 group-hover:opacity-50"
                   ></span>
                 </div>
               ))}
-            </div>
+            </motion.div>
           </div>
 
           {/* Caroline Smith */}
           <div className="flex flex-col">
-            <div className="relative">
-              <img
-                src={CarolineSmithImage}
-                alt="Caroline Smith"
-                className="w-96 h-auto object-cover"
-              />
-              <div className="absolute bottom-0 left-0 text-white p-2 w-full">
-                <h2 className="text-left text-2xl text-black">ROBERT DOE</h2>
-              </div>
-            </div>
-            <p className="text-3xl text-white text-bold mt-10 text-left">CLIENT SERVICE DIRECTOR</p>
-            <ul className="text-white text-left mt-4 space-y-2">
-              <li className="flex items-center">
-                <span style={{ color: "#ff4d00", marginRight: "10px" }}>✓</span>
-                Interactive Experience
-              </li>
-              <li className="flex items-center">
-                <span style={{ color: "#ff4d00", marginRight: "10px" }}>✓</span>
-                User Interface
-              </li>
-              <li className="flex items-center">
-                <span style={{ color: "#ff4d00", marginRight: "10px" }}>✓</span>
-                Search Engine Marketing
-              </li>
-              <li className="flex items-center">
-                <span style={{ color: "#ff4d00", marginRight: "10px" }}>✓</span>
-                Social Media
-              </li>
-              <li className="flex items-center">
-                <span style={{ color: "#ff4d00", marginRight: "10px" }}>✓</span>
-                Digital Installations
-              </li>
-            </ul>
-            {/* Social Links */}
-            <div className="flex flex-wrap justify-left gap-4 md:gap-6 py-5 mt-6">
-              {socialMedia2.map((platform, index) => (
-                <div 
-                  key={index} 
-                  className="text-white relative text-xs md:text-sm uppercase tracking-wider group flex flex-col items-center"
-                >
-                  {/* Top Line - Moves Down More on Hover with Reduced Opacity and Color Change */}
-                  <span 
-                    className="w-12 md:w-20 border-t border-white mb-1 md:mb-2 transition-all duration-300 ease-in-out 
+            <div className="flex flex-col">
+              {/* Image and Text Overlay with Framer Motion */}
+              <motion.div
+                className="relative"
+                initial={{ x: 200, opacity: 0 }} // Start from the right and invisible
+                whileInView={{ x: 0, opacity: 1 }} // Animate when in view
+                transition={{ duration: 1, ease: "easeOut" }} // Animation settings
+                viewport={{ once: false }} // Allow animation to trigger again on scroll up
+              >
+                <img
+                  src={CarolineSmithImage}
+                  alt="Caroline Smith"
+                  className="w-96 h-auto object-cover"
+                />
+                <div className="absolute bottom-0 left-0 text-white p-2 w-full">
+                  <h2 className="text-left text-2xl text-black">ROBERT DOE</h2>
+                </div>
+              </motion.div>
+
+              {/* Title and List with Framer Motion */}
+              <motion.div
+                initial={{ x: 200, opacity: 0 }} // Start from the right and invisible
+                whileInView={{ x: 0, opacity: 1 }} // Animate when in view
+                transition={{ duration: 1, ease: "easeOut" }} // Animation settings
+                viewport={{ once: false }} // Allow animation to trigger again on scroll up
+              >
+                <p className="text-3xl text-white text-bold mt-10 text-left">
+                  CLIENT SERVICE DIRECTOR
+                </p>
+                <ul className="text-white text-left mt-4 space-y-2">
+                  <li className="flex items-center">
+                    <span style={{ color: "#ff4d00", marginRight: "10px" }}>
+                      ✓
+                    </span>
+                    Interactive Experience
+                  </li>
+                  <li className="flex items-center">
+                    <span style={{ color: "#ff4d00", marginRight: "10px" }}>
+                      ✓
+                    </span>
+                    User Interface
+                  </li>
+                  <li className="flex items-center">
+                    <span style={{ color: "#ff4d00", marginRight: "10px" }}>
+                      ✓
+                    </span>
+                    Search Engine Marketing
+                  </li>
+                  <li className="flex items-center">
+                    <span style={{ color: "#ff4d00", marginRight: "10px" }}>
+                      ✓
+                    </span>
+                    Social Media
+                  </li>
+                  <li className="flex items-center">
+                    <span style={{ color: "#ff4d00", marginRight: "10px" }}>
+                      ✓
+                    </span>
+                    Digital Installations
+                  </li>
+                </ul>
+              </motion.div>
+
+              {/* Social Links with Framer Motion */}
+              <motion.div
+                className="flex flex-wrap justify-left gap-4 md:gap-6 py-5 mt-6"
+                initial={{ x: 200, opacity: 0 }} // Start from the right and invisible
+                whileInView={{ x: 0, opacity: 1 }} // Animate when in view
+                transition={{ duration: 1, ease: "easeOut" }} // Animation settings
+                viewport={{ once: false }} // Allow animation to trigger again on scroll up
+              >
+                {socialMedia2.map((platform, index) => (
+                  <div
+                    key={index}
+                    className="text-white relative text-xs md:text-sm uppercase tracking-wider group flex flex-col items-center"
+                  >
+                    {/* Top Line - Moves Down More on Hover with Reduced Opacity and Color Change */}
+                    <span
+                      className="w-12 md:w-20 border-t border-white mb-1 md:mb-2 transition-all duration-300 ease-in-out 
                       group-hover:w-16 md:group-hover:w-24 group-hover:rotate-45 group-hover:translate-y-2 md:group-hover:translate-y-4 
                       group-hover:border-gray-400 group-hover:opacity-50"
-                  ></span>
+                    ></span>
 
-                  {/* Text */}
-                  <span className="relative z-10 ">{platform}</span>
+                    {/* Text */}
+                    <span className="relative z-10 ">{platform}</span>
 
-                  {/* Bottom Line - Moves Up More on Hover with Reduced Opacity and Color Change */}
-                  <span 
-                    className="w-12 md:w-20 border-t border-white mt-1 md:mt-2 transition-all duration-300 ease-in-out 
+                    {/* Bottom Line - Moves Up More on Hover with Reduced Opacity and Color Change */}
+                    <span
+                      className="w-12 md:w-20 border-t border-white mt-1 md:mt-2 transition-all duration-300 ease-in-out 
                       group-hover:w-16 md:group-hover:w-24 group-hover:-rotate-45 group-hover:-translate-y-2 md:group-hover:-translate-y-4 
                       group-hover:border-gray-400 group-hover:opacity-50"
-                  ></span>
-                </div>
-              ))}
+                    ></span>
+                  </div>
+                ))}
+              </motion.div>
             </div>
           </div>
         </div>
