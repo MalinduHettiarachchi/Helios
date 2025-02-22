@@ -1,6 +1,6 @@
-import React from "react";
-import { motion, useAnimation } from "framer-motion"; // Import Framer Motion
-import { useInView } from "react-intersection-observer"; // To detect when the element is in view
+import React, { useState, useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 // Import images for team members (replace with actual image paths)
 import RobertDoeImage from "../assets/person1.jpg";
@@ -14,14 +14,18 @@ function Theteam() {
   const controls = useAnimation();
   const [ref, inView] = useInView({ triggerOnce: true });
 
-  React.useEffect(() => {
-    if (inView) {
+  // State to track if the movement animation is complete
+  const [movementComplete, setMovementComplete] = useState(false);
+
+  // Start percentage animation after movement animation is complete
+  useEffect(() => {
+    if (movementComplete && inView) {
       controls.start({
         strokeDasharray: ["0 100", "79 100", "83 100", "92 100", "87 100"],
         transition: { duration: 3, ease: "easeOut" },
       });
     }
-  }, [controls, inView]);
+  }, [movementComplete, inView, controls]);
 
   return (
     <div className="bg-[#1a1a1a]">
@@ -30,10 +34,10 @@ function Theteam() {
         {/* Heading with Framer Motion */}
         <motion.h1
           className="text-5xl font-bold mb-10 text-left ml-20"
-          initial={{ x: -200, opacity: 0 }} // Start from the left and invisible
-          whileInView={{ x: 0, opacity: 1 }} // Animate when in view
-          transition={{ duration: 1, ease: "easeOut" }} // Animation settings
-          viewport={{ once: false }} // Allow animation to trigger again on scroll up
+          initial={{ x: -200, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          viewport={{ once: false }}
         >
           <span className="text-[#ff4d00] italic">WHO'S</span>
           <span className="italic font-light text-white"> BEHIND HELIOS?</span>
@@ -42,10 +46,10 @@ function Theteam() {
         {/* Paragraph with Framer Motion */}
         <motion.p
           className="text-xl text-white text-left ml-20 mt-4"
-          initial={{ x: 200, opacity: 0 }} // Start from the right and invisible
-          whileInView={{ x: 0, opacity: 1 }} // Animate when in view
-          transition={{ duration: 1, ease: "easeOut" }} // Animation settings
-          viewport={{ once: false }} // Allow animation to trigger again on scroll up
+          initial={{ x: 200, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          viewport={{ once: false }}
         >
           WE DESIGN{" "}
           <span className="relative inline-block">
@@ -74,10 +78,10 @@ function Theteam() {
             {/* Image and Text Overlay with Framer Motion */}
             <motion.div
               className="relative"
-              initial={{ x: -200, opacity: 0 }} // Start from the left and invisible
-              whileInView={{ x: 0, opacity: 1 }} // Animate when in view
-              transition={{ duration: 1, ease: "easeOut" }} // Animation settings
-              viewport={{ once: false }} // Allow animation to trigger again on scroll up
+              initial={{ x: -200, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              viewport={{ once: false }}
             >
               <img
                 src={RobertDoeImage}
@@ -91,10 +95,10 @@ function Theteam() {
 
             {/* Title and List with Framer Motion */}
             <motion.div
-              initial={{ x: -200, opacity: 0 }} // Start from the left and invisible
-              whileInView={{ x: 0, opacity: 1 }} // Animate when in view
-              transition={{ duration: 1, ease: "easeOut" }} // Animation settings
-              viewport={{ once: false }} // Allow animation to trigger again on scroll up
+              initial={{ x: -200, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              viewport={{ once: false }}
             >
               <p className="text-3xl text-white text-bold mt-10 text-left">
                 HEAD OF DEVELOPMENT
@@ -136,10 +140,10 @@ function Theteam() {
             {/* Social Links with Framer Motion */}
             <motion.div
               className="flex flex-wrap justify-left gap-4 md:gap-6 py-5 mt-6"
-              initial={{ x: -200, opacity: 0 }} // Start from the left and invisible
-              whileInView={{ x: 0, opacity: 1 }} // Animate when in view
-              transition={{ duration: 1, ease: "easeOut" }} // Animation settings
-              viewport={{ once: false }} // Allow animation to trigger again on scroll up
+              initial={{ x: -200, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              viewport={{ once: false }}
             >
               {socialMedia1.map((platform, index) => (
                 <div
@@ -173,10 +177,10 @@ function Theteam() {
               {/* Image and Text Overlay with Framer Motion */}
               <motion.div
                 className="relative"
-                initial={{ x: 200, opacity: 0 }} // Start from the right and invisible
-                whileInView={{ x: 0, opacity: 1 }} // Animate when in view
-                transition={{ duration: 1, ease: "easeOut" }} // Animation settings
-                viewport={{ once: false }} // Allow animation to trigger again on scroll up
+                initial={{ x: 200, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 1, ease: "easeOut" }}
+                viewport={{ once: false }}
               >
                 <img
                   src={CarolineSmithImage}
@@ -190,10 +194,10 @@ function Theteam() {
 
               {/* Title and List with Framer Motion */}
               <motion.div
-                initial={{ x: 200, opacity: 0 }} // Start from the right and invisible
-                whileInView={{ x: 0, opacity: 1 }} // Animate when in view
-                transition={{ duration: 1, ease: "easeOut" }} // Animation settings
-                viewport={{ once: false }} // Allow animation to trigger again on scroll up
+                initial={{ x: 200, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 1, ease: "easeOut" }}
+                viewport={{ once: false }}
               >
                 <p className="text-3xl text-white text-bold mt-10 text-left">
                   CLIENT SERVICE DIRECTOR
@@ -235,10 +239,10 @@ function Theteam() {
               {/* Social Links with Framer Motion */}
               <motion.div
                 className="flex flex-wrap justify-left gap-4 md:gap-6 py-5 mt-6"
-                initial={{ x: 200, opacity: 0 }} // Start from the right and invisible
-                whileInView={{ x: 0, opacity: 1 }} // Animate when in view
-                transition={{ duration: 1, ease: "easeOut" }} // Animation settings
-                viewport={{ once: false }} // Allow animation to trigger again on scroll up
+                initial={{ x: 200, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 1, ease: "easeOut" }}
+                viewport={{ once: false }}
               >
                 {socialMedia2.map((platform, index) => (
                   <div
@@ -270,23 +274,24 @@ function Theteam() {
       </div>
 
       {/* Team Skills Section */}
-      <div className="bg-[#1a1a1a] p-10 overflow-x-hidden" ref={ref} >
+      <div className="bg-[#1a1a1a] p-10 overflow-x-hidden" ref={ref}>
         <div className="max-w-[1200px] mx-auto">
           <motion.h1
             className="text-5xl font-bold mb-8 text-[#ff4d00] ml-20"
-            initial={{ x: -200, opacity: 0 }} // Start from the left and invisible
-            whileInView={{ x: 0, opacity: 1 }} // Animate when in view
-            transition={{ duration: 1, ease: "easeOut" }} // Animation settings
-            viewport={{ once: false }} // Allow animation to trigger again on scroll up
+            initial={{ x: -200, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            viewport={{ once: false }}
+            onAnimationComplete={() => setMovementComplete(true)} // Trigger after movement animation
           >
             <h2 className="">TEAM SKILLS</h2>
           </motion.h1>
           <motion.h1
             className="text-lg mb-12 text-white ml-20 mr-20"
-            initial={{ x: 200, opacity: 0 }} // Start from the left and invisible
-            whileInView={{ x: 0, opacity: 1 }} // Animate when in view
-            transition={{ duration: 1, ease: "easeOut" }} // Animation settings
-            viewport={{ once: false }} // Allow animation to trigger again on scroll up
+            initial={{ x: 200, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            viewport={{ once: false }}
           >
             <p>
               Consectetur est quis mauris accumsan eleifend sit amet non neq.
@@ -300,10 +305,10 @@ function Theteam() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* PHP Skill */}
             <motion.h1
-              initial={{ x: -200, opacity: 0 }} // Start from the left and invisible
-              whileInView={{ x: 0, opacity: 1 }} // Animate when in view
-              transition={{ duration: 1, ease: "easeOut" }} // Animation settings
-              viewport={{ once: false }} // Allow animation to trigger again on scroll up
+              initial={{ x: -200, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              viewport={{ once: false }}
             >
               <div className="text-center text-white">
                 <h3 className="text-2xl font-bold mb-4">PHP</h3>
@@ -330,10 +335,10 @@ function Theteam() {
 
             {/* CSS3 Skill */}
             <motion.h1
-              initial={{ x: -200, opacity: 0 }} // Start from the left and invisible
-              whileInView={{ x: 0, opacity: 1 }} // Animate when in view
-              transition={{ duration: 1, ease: "easeOut" }} // Animation settings
-              viewport={{ once: false }} // Allow animation to trigger again on scroll up
+              initial={{ x: -200, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              viewport={{ once: false }}
             >
               <div className="text-center text-white">
                 <h3 className="text-2xl font-bold mb-4">CSS3</h3>
@@ -360,10 +365,10 @@ function Theteam() {
 
             {/* HTML5 Skill */}
             <motion.h1
-              initial={{ x: 200, opacity: 0 }} // Start from the left and invisible
-              whileInView={{ x: 0, opacity: 1 }} // Animate when in view
-              transition={{ duration: 1, ease: "easeOut" }} // Animation settings
-              viewport={{ once: false }} // Allow animation to trigger again on scroll up
+              initial={{ x: 200, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              viewport={{ once: false }}
             >
               <div className="text-center text-white">
                 <h3 className="text-2xl font-bold mb-4">HTML5</h3>
@@ -390,10 +395,10 @@ function Theteam() {
 
             {/* jQuery Skill */}
             <motion.h1
-              initial={{ x: 200, opacity: 0 }} // Start from the left and invisible
-              whileInView={{ x: 0, opacity: 1 }} // Animate when in view
-              transition={{ duration: 1, ease: "easeOut" }} // Animation settings
-              viewport={{ once: false }} // Allow animation to trigger again on scroll up
+              initial={{ x: 200, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              viewport={{ once: false }}
             >
               <div className="text-center text-white">
                 <h3 className="text-2xl font-bold mb-4">jQuery</h3>
