@@ -14,9 +14,9 @@ function Aboutus() {
   return (
     <div className="w-full overflow-x-hidden bg-[#1a1a1a]">
       {/* Title Section */}
-      <div className="bg-[#232323] text-white py-10 md:py-20 px-5 md:px-10 lg:px-20 text-left">
+      <div className="bg-[#232323] text-white py-10 md:py-20 px-5 md:px-10 lg:px-20 text-left ">
         <motion.h2
-          className="text-3xl md:text-4xl lg:text-5xl font-bold"
+          className="text-3xl md:text-4xl lg:text-5xl font-bold ml-10"
           initial={{ x: -200, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 1, ease: "easeOut" }}
@@ -27,7 +27,7 @@ function Aboutus() {
         </motion.h2>
 
         <motion.p
-          className="mt-4 text-base md:text-lg lg:text-xl text-gray-300 tracking-wide"
+          className="mt-4 text-base md:text-lg lg:text-xl text-gray-300 tracking-wide ml-10"
           initial={{ x: 200, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 1, ease: "easeOut" }}

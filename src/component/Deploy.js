@@ -3,6 +3,7 @@ import Home from "../component/Home"
 import Navbar from './Navbar'
 import Aboutus from './Aboutus'
 import BackImage from './backimage'
+import Theteam from './Theteam'
 
 function Deploy() {
   return (
@@ -11,6 +12,7 @@ function Deploy() {
       <Navbar/>
       <Aboutus />
       <BackImage />
+      <Theteam />
     </div>
   )
 }
