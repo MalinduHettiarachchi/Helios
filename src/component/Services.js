@@ -1,6 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaPaintBrush, FaLaptop, FaSearch } from "react-icons/fa"; // Import icons
+import { FaPaintBrush, FaLaptop, FaSearch } from "react-icons/fa";
+import Arror from "../assets/down2.png";
+
 
 function Services() {
   const services = [
@@ -122,13 +124,15 @@ function Services() {
       <div className="p-8 md:p-12 w-full overflow-x-hidden flex flex-col items-center justify-center">
         {/* Heading with Framer Motion */}
         <motion.h1
-          className="text-3xl md:text-3xl font-bold mb-6 md:mb-6text-left ml-4 md:ml-20"
+          className="text-3xl md:text-3xl font-bold mb-6 md:mb-6 text-left ml-4 md:ml-20"
           initial={{ x: -200, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 1, ease: "easeOut" }}
           viewport={{ once: false }}
         >
-          <span className="text-white  ">ARE YOU READY TO START A CONVERSATION?</span>
+          <span className="text-white">
+            ARE YOU READY TO START A CONVERSATION?
+          </span>
         </motion.h1>
 
         {/* Paragraph with Framer Motion */}
@@ -139,7 +143,28 @@ function Services() {
           transition={{ duration: 1, ease: "easeOut" }}
           viewport={{ once: false }}
         >
-          Get In Touch 
+          <button className="flex flex-col items-center justify-center">
+            {/* Text and Line */}
+            <span className="relative inline-block">
+              Get In Touch
+              {/* Line under the text */}
+              <div className="absolute left-0 top-[-10px] w-full h-[2px] bg-white"></div>
+            </span>
+
+            {/* Image (Arrow) - Only visible on hover */}
+            <motion.div
+              initial={{ y: -40, opacity: 0 }} // Initially hidden and slightly above
+              whileHover={{ y: 0, opacity: 1 }} // Visible on hover
+              transition={{ duration: 0.3, ease: "easeOut" }} // Smooth transition
+              animate={{ y: -40, opacity: 0 }} // Reset to hidden state when not hovered
+            >
+              <img
+                src={Arror}
+                alt="Bottom Image"
+                className=" transition-all mt-5 lg:w-10 lg:h-5 bg-[#1a1a1a]"
+              />
+            </motion.div>
+          </button>
         </motion.p>
       </div>
     </div>

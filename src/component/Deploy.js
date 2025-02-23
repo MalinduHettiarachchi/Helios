@@ -6,6 +6,7 @@ import BackImage from './backimage'
 import Theteam from './Theteam'
 import Backimg2 from './Backimg2'
 import Services from './Services'
+import Backimg3 from './Backimg3'
 
 function Deploy() {
   return (
@@ -17,6 +18,7 @@ function Deploy() {
       <Theteam />
       <Backimg2 />
       <Services />
+      <Backimg3 />
     </div>
   )
 }
