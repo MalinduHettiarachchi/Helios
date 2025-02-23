@@ -9,6 +9,7 @@ import Services from './Services'
 import Backimg3 from './Backimg3'
 import Works from './Works'
 import Blog from './Blog'
+import Contact from './Contact'
 
 function Deploy() {
   return (
@@ -23,6 +24,7 @@ function Deploy() {
       <Backimg3 />
       <Works />
       <Blog />
+      <Contact />
     </div>
   )
 }
