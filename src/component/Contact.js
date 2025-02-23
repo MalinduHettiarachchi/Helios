@@ -35,7 +35,7 @@ function Contact() {
         </motion.p>
       </div>
 
-      <div className="bg-[#232323] p-10">
+      <div className="bg-[#232323] p-6 md:p-10 overflow-x-hidden">
         {/* Heading with Framer Motion */}
         <motion.h1
           className="text-3xl md:text-4xl font-bold text-center"
@@ -47,7 +47,8 @@ function Contact() {
           <span className="text-[#ff4d00]">SAY HELLO </span>
         </motion.h1>
 
-        <div className="flex flex-col items-start w-[500px] mx-auto">
+        {/* Form Container */}
+        <div className="flex flex-col items-center w-full max-w-[500px] mx-auto">
           {/* Name Field */}
           <motion.div
             className="flex flex-col items-start w-full"
@@ -67,7 +68,7 @@ function Contact() {
               id="name"
               name="name"
               required
-              className="mt-1 block w-full px-4 py-2 bg-[#1a1a1a] text-white mb-4 "
+              className="mt-1 block w-full px-4 py-2 bg-[#1a1a1a] text-white mb-4 rounded-md focus:outline-none focus:ring-2 focus:ring-[#ff4d00]"
             />
           </motion.div>
 
@@ -90,7 +91,7 @@ function Contact() {
               id="email"
               name="email"
               required
-              className="mt-1 block w-full px-4 py-2 bg-[#1a1a1a] text-white mb-4 "
+              className="mt-1 block w-full px-4 py-2 bg-[#1a1a1a] text-white mb-4 rounded-md focus:outline-none focus:ring-2 focus:ring-[#ff4d00]"
             />
           </motion.div>
 
@@ -113,7 +114,7 @@ function Contact() {
               name="message"
               required
               rows="4"
-              className="mt-1 block w-full px-4 py-2 bg-[#1a1a1a] text-white resize-none mb-4 "
+              className="mt-1 block w-full px-4 py-2 bg-[#1a1a1a] text-white resize-none mb-4 rounded-md focus:outline-none focus:ring-2 focus:ring-[#ff4d00]"
             ></textarea>
           </motion.div>
 
@@ -127,7 +128,7 @@ function Contact() {
           >
             <button
               type="submit"
-              className="w-full px-4 py-2 bg-[#ff4d00] text-white font-bold  hover:bg-[#e64500] transition-colors "
+              className="w-full px-4 py-2 bg-[#ff4d00] text-white font-bold rounded-md hover:bg-[#e64500] transition-colors focus:outline-none focus:ring-2 focus:ring-[#ff4d00]"
             >
               Submit
             </button>
