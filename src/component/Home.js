@@ -13,7 +13,6 @@ import Side2 from "../assets/side2.jpg";
 import Side3 from "../assets/side3.jpg";
 import SocialLinks from "../component/SocialLinks";
 import Arror from "../assets/down.png";
-
 function Home() {
   const [swiper, setSwiper] = useState(null);
 
