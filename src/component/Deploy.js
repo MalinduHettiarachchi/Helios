@@ -48,9 +48,14 @@ function Deploy() {
   const scrollToSection = (ref) => {
     if (ref.current) {
       ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
+      closeMenu();
     }
   };
 
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+  
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
