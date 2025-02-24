@@ -35,9 +35,9 @@ function Backimg2() {
     >
       <div className="py-20 sm:py-32 text-white text-center px-5 overflow-hidden">
         {/* Heading */}
-        <div className="max-w-[450px] bg-[#232323] text-white mx-auto mb-10 sm:mb-20">
+        <div className="max-w-[300px] bg-[#232323] text-white mx-auto mb-10 sm:mb-20">
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold p-2 flex items-center justify-center">
-            OUR LATEST FLICKER SHOTS
+            OUR PARTNERS
           </h2>
         </div>
 

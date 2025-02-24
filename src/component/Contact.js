@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import Footer from "./Footer";
 
 function Contact() {
   return (
@@ -135,7 +134,6 @@ function Contact() {
           </motion.div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

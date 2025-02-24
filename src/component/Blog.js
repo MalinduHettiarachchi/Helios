@@ -106,16 +106,15 @@ function Blog() {
             {visibleCards.map((card) => (
               <div
                 key={card.id}
-                className="bg-[#232323] shadow-lg flex flex-col" // Flex layout for splitting
-                style={{ minHeight: "400px", height: "auto" }} // Responsive height
-              >
+                className="bg-[#232323] shadow-lg flex flex-col"
+                style={{ minHeight: "400px", height: "auto" }}>
                 {/* Top Part with Background Image */}
                 <div
-                  className="p-6 bg-cover bg-center" // Background image styling
+                  className="p-6 bg-cover bg-center"
                   style={{
                     height: "240px",
                     borderBottom: "1px solid #444",
-                    backgroundImage: `url(${card.image})`, // Set background image
+                    backgroundImage: `url(${card.image})`,
                   }}
                 >
                   <p className="text-white bg-[#232323] p-1 w-[110px] opacity-80">
@@ -124,14 +123,21 @@ function Blog() {
                 </div>
 
                 {/* Bottom Part */}
-                <div className="p-6 flex-1 flex flex-col justify-between">
-                  <h3 className="text-xl font-bold mb-2 text-white">
-                    {card.title}
-                  </h3>
+                <div className="p-6 flex-1 flex flex-col ">
+                  <h3 className="text-xl font-bold text-white">{card.title}</h3>
                   <p className="text-gray-300 text-sm sm:text-base">
                     {card.content}
                   </p>
+
+                  {/* Add Button */}
+                  <button
+                    className="mt-4 py-1 px-1 bg-[#1a1a1a] text-white w-[100px] transition-all"
+                    onClick={() => alert(`Button clicked for ${card.title}`)}
+                  >
+                    Read More
+                  </button>
                 </div>
+
               </div>
             ))}
           </div>

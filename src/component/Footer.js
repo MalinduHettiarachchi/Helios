@@ -100,26 +100,25 @@ const Footer = () => {
             <h3 className="text-lg font-semibold text-white">Services</h3>
             <ul className="space-y-2">
               <li className="text-gray-400">
-                Real-Time Fuel Delivery Tracking
+                Fast Delivery
               </li>
               <li className="text-gray-400">
-                Fuel Inventory Management System
+                24 Hours Customer Services
               </li>
               <li className="text-gray-400">
-                Mobile App for Fuel Station Monitoring
+                Maintaining 
               </li>
             </ul>
           </div>
 
           {/* Industries Section */}
           <div className="flex flex-col space-y-4">
-            <h3 className="text-lg font-semibold text-white">Industries</h3>
+            <h3 className="text-lg font-semibold text-white">Category</h3>
             <ul className="space-y-2">
-              <li className="text-gray-400">Transportation</li>
-              <li className="text-gray-400">Construction</li>
-              <li className="text-gray-400">Manufacturing</li>
-              <li className="text-gray-400">Logistics</li>
-              <li className="text-gray-400">Oil & Gas</li>
+              <li className="text-gray-400">Web</li>
+              <li className="text-gray-400">Moblie</li>
+              <li className="text-gray-400">Cloud</li>
+              <li className="text-gray-400">Network</li>
             </ul>
           </div>
         </div>
@@ -131,6 +130,8 @@ const Footer = () => {
             HELIOS IT (Pvt) Ltd
           </p>
         </div>
+
+        
 
         <div className="flex flex-wrap justify-center gap-4 md:gap-2 py-10">
           {socialMedia.map((platform, index) => (
