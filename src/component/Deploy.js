@@ -464,7 +464,7 @@ function Deploy() {
 
       <div class="fixed lg:bottom-16 bottom-4 right-4 w-[50px] h-[50px] flex justify-center items-center z-50">
         <a
-          href="https://wa.me/94763630369"
+          href="https://wa.me/94770085670"
           class="bg-black text-white p-3 h-[50px] w-[50px] rounded-full shadow-lg hover:bg-green-600 transition duration-300 flex justify-center items-center"
           target="_blank"
           aria-label="Contact us on WhatsApp"
