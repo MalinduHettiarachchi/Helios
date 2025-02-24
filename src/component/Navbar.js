@@ -7,9 +7,10 @@ function Navbar() {
     console.log("Menu toggled:", !isMenuOpen); // Debugging
     setIsMenuOpen(!isMenuOpen);
   };
+  
 
   return (
-    <nav className="bg-black text-white flex justify-between items-center px-4 md:px-10 py-4 relative">
+    <nav className="bg-black text-white flex justify-between items-center px-4 md:px-10 py-4 relative ">
       {/* Logo */}
       <div className="text-white text-3xl font-light tracking-wide">
         H E L I
