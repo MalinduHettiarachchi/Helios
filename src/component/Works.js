@@ -9,7 +9,11 @@ import img6 from "../assets/mob4.jpg";
 import img7 from "../assets/mob1.jpg";
 import img8 from "../assets/mob2.jpg";
 import img9 from "../assets/mob3.jpg";
-import img11 from "../assets/clo1.jpeg";
+import img10 from "../assets/clo1.jpeg";
+import img11 from "../assets/clo2.jpeg";
+import img12 from "../assets/net1.jpg";
+import img13 from "../assets/net2.jpg";
+import img14 from "../assets/net3.jpeg";
 
 function Works() {
   const [selectedCategory, setSelectedCategory] = useState("Show All");
@@ -26,7 +30,11 @@ function Works() {
     { id: 7, src: img7, category: "Mobile" },
     { id: 8, src: img8, category: "Mobile" },
     { id: 9, src: img9, category: "Mobile" },
-    { id: 10, src: img11, category: "Cloud" },
+    { id: 10, src: img10, category: "Cloud" },
+    { id: 11, src: img11, category: "Cloud" },
+    { id: 12, src: img12, category: "Network" },
+    { id: 13, src: img13, category: "Network" },
+    { id: 14, src: img14, category: "Network" },
   ];
 
   // Filter photos based on the selected category
