@@ -17,9 +17,10 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { motion } from "framer-motion";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import Side1 from "../assets/side1.jpg";
-import Side2 from "../assets/side2.jpg";
-import Side3 from "../assets/side3.jpg";
+import Side1 from "../assets/side6.jpg";
+import Side2 from "../assets/web3.jpg";
+import Side3 from "../assets/side7.jpg";
+import Side4 from "../assets/backimg2.jpg";
 import SocialLinks from "../component/SocialLinks";
 import Arror from "../assets/down.png";
 
@@ -114,19 +115,7 @@ function Deploy() {
                   transition={{ duration: 1.5 }}
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-70"></div>
-                <motion.div
-                  className="absolute top-1/3 left-10 text-white md:left-5 lg:left-10"
-                  initial={{ opacity: 0, x: -50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 1.2, delay: 0.5 }}
-                >
-                  <h1 className="text-3xl font-bold md:text-4xl lg:text-4xl">
-                    INNOVATIVE IT SOLUTIONS
-                  </h1>
-                  <p className="text-base md:text-lg lg:text-lg">
-                    Empowering Businesses with Next-Gen Technology.
-                  </p>
-                </motion.div>
+                
               </div>
             </SwiperSlide>
 
@@ -141,20 +130,7 @@ function Deploy() {
                   transition={{ duration: 1.5 }}
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-70"></div>
-                <motion.div
-                  className="absolute top-1/3 left-10 text-white md:left-5 lg:left-10"
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1.2, delay: 0.5 }}
-                >
-                  <h1 className="text-3xl font-bold md:text-4xl lg:text-4xl">
-                    CUSTOM DEVELOPMENT
-                  </h1>
-                  <p className="text-base md:text-lg lg:text-lg">
-                    {" "}
-                    Scalable & Secure Digital Solutions Tailored for You.
-                  </p>
-                </motion.div>
+                
               </div>
             </SwiperSlide>
 
@@ -169,20 +145,7 @@ function Deploy() {
                   transition={{ duration: 1.5 }}
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-70"></div>
-                <motion.div
-                  className="absolute top-1/3 left-10 text-white md:left-5 lg:left-10"
-                  initial={{ opacity: 0, x: 50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 1.2, delay: 0.5 }}
-                >
-                  <h1 className="text-3xl font-bold md:text-4xl lg:text-4xl">
-                    CLOUD & CYBERSECURITY
-                  </h1>
-                  <p className="text-base md:text-lg lg:text-lg">
-                    {" "}
-                    Protecting Your Digital Assets with Advanced Security.
-                  </p>
-                </motion.div>
+                
               </div>
             </SwiperSlide>
           </Swiper>
